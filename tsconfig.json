@@ -1,0 +1,62 @@
+{
+  "compilerOptions": {
+    // Target ES2020 for modern JavaScript features (async/await, optional chaining, etc.)
+    "target": "ES2020",
+
+    // Use ES modules (import/export syntax)
+    "module": "commonjs",
+
+    // Enable all strict type-checking options (catches bugs early)
+    "strict": true,
+
+    // Allow importing .json files as modules
+    "resolveJsonModule": true,
+
+    // Ensure consistent casing in imports (prevents cross-platform issues)
+    "forceConsistentCasingInFileNames": true,
+
+    // Skip type checking of declaration files (faster compilation)
+    "skipLibCheck": true,
+
+    // Allow default imports from modules with no default export
+    "esModuleInterop": true,
+
+    // Include type definitions for Node.js built-in modules
+    "types": ["node"],
+
+    // Output compiled files here (not needed for Playwright, but good practice)
+    "outDir": "./dist",
+
+    // Include source maps for debugging
+    "sourceMap": true,
+
+    // Don't emit compiled files (Playwright uses ts-node internally)
+    "noEmit": true,
+
+    // Base directory for resolving non-relative module names
+    "baseUrl": ".",
+
+    // Path mapping for cleaner imports (optional, but professional)
+    "paths": {
+      "@pages/*": ["pages/*"],
+      "@utils/*": ["utils/*"],
+      "@tests/*": ["tests/*"]
+    }
+  },
+
+  // Include all TypeScript files in these directories
+  "include": [
+    "tests/**/*.ts",
+    "pages/**/*.ts",
+    "utils/**/*.ts",
+    "playwright.config.ts"
+  ],
+
+  // Exclude these directories from compilation
+  "exclude": [
+    "node_modules",
+    "dist",
+    "playwright-report",
+    "test-results"
+  ]
+}
